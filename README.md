@@ -1,0 +1,1 @@
+These are the weekly remote-learning assignments on AppWorks School front-end class batch#19.
