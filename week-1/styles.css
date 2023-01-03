@@ -1,0 +1,122 @@
+/* for the font used in the assignment */
+@import url(//db.onlinewebfonts.com/c/98c787ebd2fbc89cff250e889c8f59cc?family=AscenderSerifW01-Regular);
+@import url(//db.onlinewebfonts.com/c/87cf7b4a5bf7b698fa9bcb9f73e32774?family=AscenderSerifW01-Bold);
+
+@font-face {font-family: "AscenderSerifW01-Regular"; src: url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.eot"); src: url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.woff") format("woff"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.svg#AscenderSerifW01-Regular") format("svg"); }
+@font-face {font-family: "AscenderSerifW01-Bold"; src: url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.eot"); src: url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.woff") format("woff"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.svg#AscenderSerifW01-Bold") format("svg"); }
+
+/*reset style*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: AscenderSerifW01-Regular, serif;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  background-color: #eee;
+}
+
+.logo {
+  display: inline-block;
+  margin: 1rem 2rem;
+}
+
+.nav-items {
+  display: inline-block;
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin-right: 1.5rem;
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 1rem 1.5rem;
+}
+
+/* only shows when screen size < 800px */
+.nav-icon {
+  display: none;
+}
+
+.welcome {
+  background-color: #cde;
+  width: 100%;
+  text-align: center;
+  padding: 4rem;
+}
+
+.welcome-msg {
+  font-size: 2rem;
+  font-family: AscenderSerifW01-Bold, serif;
+}
+
+.content {
+  /* position: relative; */
+  padding: 1rem;
+}
+
+.content h2 {
+  text-align: center;
+  font-family: AscenderSerifW01-Bold, serif;
+  padding-bottom: 1em;
+  font-size: 1.5rem;
+}
+
+.content-boxes {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.content-box {
+  background-color: #89a;
+  text-align: center;
+  padding: 0.5rem;
+  height: 200px;
+}
+
+.button {
+  background-color: #def;
+  border: none;
+  display: block;
+  padding: 1rem;
+  margin: 1rem auto 0;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 799px) {
+  .nav-item {
+    display: none;
+  }
+  .nav-icon {
+    display: inline-block;
+    margin: 1rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .content-boxes {
+    grid-template-columns: 1fr;
+  }
+}
