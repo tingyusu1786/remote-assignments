@@ -6,33 +6,44 @@
   <title>Google Developers</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <style> @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto&display=swap'); </style>
 </head>
 <body>
   <header>
-    <div class="logo"><a href="#"><img src="img/lockup-developers.svg"></a></div>
-    <nav>
-      <ul>
-        <li><a href="#">Products&nbsp;&#9660;</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Learn</a></li>
-        <li><a href="#">Community&nbsp;&#9660;</a></li>
-        <li><a href="#">Developer Profile</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </nav>
-    <div id="search"><span class="material-symbols-outlined">search</span>&nbsp;Search</div>
-    <div class="language"><button><span class="material-symbols-outlined">language</span>English&nbsp;&#9660;</button></div>
-    <div class="profile"><button><span class="material-symbols-outlined">more_vert</span></button></div>
-    <div class="profile"><button><img src="img/unnamed.jpg" alt=""></button></div>
+    <div class="left">
+      <div class="logo"><a href="#"><img src="img/lockup-developers.svg"></a></div>
+      <nav>
+        <ul>
+          <li><a href="#">Products&nbsp;&#9660;</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Learn</a></li>
+          <li><a href="#">Community&nbsp;&#9660;</a></li>
+          <li><a href="#">Developer Profile</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">More&nbsp;&#9660;</a></li>
+        </ul>
+      </nav>  
+    </div>
+
+    <div class="right">
+      <div id="search"><button><span class="material-symbols-outlined">search</span>&nbsp;Search</button></div>
+      <div class="language"><button><span class="material-symbols-outlined">language</span>English&nbsp;&#9660;</button></div>
+      <div class="profile"><button><span class="material-symbols-outlined">more_vert</span></button></div>
+      <div class="profile"><button><img src="img/unnamed.jpg" alt=""></button></div>  
+    </div>
   </header>
   <main>
-
     <section class="promotion">
-      <h1>Apply to the TEC Impact Fund today</h1>
-      <p>The $1 Million Tech Equity Collective (TEC) Impact Fund supports organizations within the US that provide programming for aspiring Black tech professionals, with a focus on core engineering and technical roles. Apply by December 31.</p>
-      <button>Learn More</button>
-      <div>
+      <div class="img">
         <img src="img/tech-equity.svg">
+      </div>
+      <div class="article">
+        <article>
+          <h1>Apply to the TEC Impact Fund today</h1>
+          <p>The $1 Million Tech Equity Collective (TEC) Impact Fund supports organizations within the US that provide programming for aspiring Black tech professionals, with a focus on core engineering and technical roles. Apply by December 31.</p>
+          <button>Learn More</button>
+        </article>  
       </div>
     </section>
 
@@ -92,17 +103,23 @@
     </section>
 
     <section class="events">
-      <h1>Work smarter and build faster</h1>
-      <button>See how at a developer event</button>
+      <div class="events-header">
+        <h1>Work smarter and build faster</h1>
+        <button>See how at a developer event</button>
+      </div>
       <div class="events-container">
         <div class="event">
-          <header><img src="img/card-header-grid.png" alt=""></header>
+          <header>
+            <img src="img/card-header-grid.png" alt="">
+          </header>
           <h1>Events</h1>
           <p>Bringing developers together in-person and online. Stay in the know about upcoming events, catch up on content you missed, and connect with Google experts.</p>
           <button>See events</button>
         </div>
         <div class="event">
-          <header><img src="img/card-header-grid.png" alt=""></header>
+          <header>
+            <img src="img/card-header-grid.png" alt="">
+          </header>
           <h1>Community</h1>
           <p>Connect with fellow developers and startups in your area, hear from industry experts, share your skills, and learn new ones.</p>
           <button>Find Community</button>
@@ -117,49 +134,49 @@
           <img src="img/Android_Robot.png" alt="">
           <h1>Compose 1.2 Beta</h1>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sapiente animi voluptatibus aliquid ducimus hic.</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/material-design.png" alt="">
           <h1>Design for everyone</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minus enim ad eos corrupti unde voluptate odit tempora provident numquam necessitatibus!</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/logo-flutter.svg" alt="">
           <h1>Explore Flutter 3.3 and Wonderous</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nihil fuga magnam iusto est dolor nesciunt ea ullam rem ducimus.</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/192px.svg" alt="">
           <h1>New Google Wallet documentation</h1>
           <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Autem, minus?</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/new-play-logo.png" alt="">
           <h1>Notes from Google Play</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis exercitationem, facere fuga?</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/open-source.png" alt="">
           <h1>Innovate now with open source</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ipsa fugit vitae nihil, veniam nostrum accusantium eveniet iure suscipit ducimus et.</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/logo-tensorflow.svg" alt="">
           <h1>Smarter apps with on-device ML</h1>
           <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Officiis!</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
         <div class="news">
           <img src="img/developers-logo-color.svg" alt="">
           <h1>Discover beginner-friendly content</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, dolore.</p>
-          <p class="more"><a href="">Learn more</a></p>
+          <button class="more">Learn more</button>
         </div>
       </div>
     </section>
@@ -174,33 +191,34 @@
           <h1 class="expert-name">Sathish VJ</h1>
           <p class="expert-location">Bengaluru India</p>
           <p>Expertise:<br><span class="expertise">Google Cloud Platform</span></p>
-          <p class="more">View Profile</p>
+          <button class="more">View Profile</button>
         </div>
         <div class="expert">
           <img src="img/avatars.png" alt="">
           <h1 class="expert-name">Jirayut Nimsaeng</h1>
           <p class="expert-location">Bangkok Thailand</p>
           <p>Expertise:<br><span class="expertise">Google Cloud Platform</span></p>
-          <p class="more">View Profile</p>
+          <button class="more">View Profile</button>
         </div>
         <div class="expert">
           <img src="img/avatars.png" alt="">
           <h1 class="expert-name">Eka Jayani Ayuningtyas</h1>
           <p class="expert-location">Yogyakarta City, Special Region of Yogyakarta Indonesia</p>
           <p>Expertise:<br><span class="expertise">Web Technologies</span></p>
-          <p class="more">View Profile</p>
+          <button class="more">View Profile</button>
         </div>
         <div class="expert">
           <img src="img/avatars.png" alt="">
           <h1 class="expert-name">Maureen Barahona</h1>
           <p class="expert-location">Tegucigalpa Honduras</p>
           <p>Expertise:<br><span class="expertise">Google Cloud Platform</span></p>
-          <p class="more">View Profile</p>
+          <button class="more">View Profile</button>
         </div>
       </div>
     </section>
 
   </main>
+
   <footer>
     <div class="link-groups-container">
       <div class="link-group">
@@ -237,27 +255,31 @@
       </div>
     </div>
     <hr>
-    <div>
+    <div class="bottom-nav">
       <div class="logo"><img src="img/lockup.svg" alt=""></div>
       <nav>
         <ul>
-          <li>Android</li>
-          <li>Chrome</li>
-          <li>Firebase</li>
-          <li>Google Cloud Platform</li>
-          <li>All products</li>
+          <li><a href="#">Android</a></li>
+          <li><a href="#">Chrome</a></li>
+          <li><a href="#">Firebase</a></li>
+          <li><a href="#">Google Cloud Platform</a></li>
+          <li><a href="#">All products</a></li>
         </ul>
       </nav>
     </div>
     <hr>
-    <div>
-      <div><span><a>Terms</a>&nbsp;&verbar;&nbsp;<a>Privacy</a></span></div>
-      <div>
-        <span>Sign up for the Google Developers newsletter</span>
-        <button>Subscribe</button>
+    <div class="bottom-info">
+      <div class="bottom-left">
+        <a>Terms</a>&nbsp;&verbar;&nbsp;<a>Privacy</a>
       </div>
-      <div class="language">
-        <button><span class="material-symbols-outlined">language</span>English&nbsp;&#9660;</button>
+      <div class="bottom-right">
+        <div class="subscribe">
+          Sign up for the Google Developers newsletter&ensp;
+          <button>Subscribe</button>
+        </div>
+        <div class="language">
+          <button><span class="material-symbols-outlined">language</span>&nbsp;English&nbsp;&#9660;</button>
+        </div>
       </div>
     </div>
   </footer>
