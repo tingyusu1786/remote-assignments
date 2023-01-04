@@ -87,7 +87,7 @@ header li {
 
 .header-nav li {
   display: inline-block;
-  /* margin-right: 1rem; */
+  margin-right: 1rem;
 }
 
 .header-right * {
