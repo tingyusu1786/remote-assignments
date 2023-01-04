@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +10,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
   <style> @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto&display=swap'); </style>
 </head>
+
 <body>
   <header>
-    <div class="left">
-      <div class="logo"><a href="#"><img src="img/lockup-developers.svg"></a></div>
-      <nav>
+    <div class="header-left">
+      <div class="items-bar">
+        <a href="#">&#8801;</a>  
+      </div>
+      <div class="logo">
+        <a href="#"><img src="img/lockup-developers.svg"></a>  
+      </div>
+      <nav class="header-nav">
         <ul>
           <li><a href="#">Products&nbsp;&#9660;</a></li>
           <li><a href="#">Events</a></li>
@@ -21,18 +28,35 @@
           <li><a href="#">Community&nbsp;&#9660;</a></li>
           <li><a href="#">Developer Profile</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">More&nbsp;&#9660;</a></li>
+          <li class="more-item"><a href="#">More&nbsp;&#9660;</a></li>
         </ul>
       </nav>  
     </div>
-
-    <div class="right">
-      <div id="search"><button><span class="material-symbols-outlined">search</span>&nbsp;Search</button></div>
-      <div class="language"><button><span class="material-symbols-outlined">language</span>English&nbsp;&#9660;</button></div>
-      <div class="profile"><button><span class="material-symbols-outlined">more_vert</span></button></div>
-      <div class="profile"><button><img src="img/unnamed.jpg" alt=""></button></div>  
+    <div class="header-right">
+      <div class="search">
+        <button>
+          <span class="material-symbols-outlined">search</span>&nbsp;Search
+        </button>
+      </div>
+      <a class="search-icon" href=""><span class="material-symbols-outlined">search</span></a>
+      <div class="language">
+        <button>
+          <span class="material-symbols-outlined">language</span>&nbsp;English&nbsp;&#9660;
+        </button>
+      </div>
+      <div class="profile-icon">
+        <a>
+          <span class="material-symbols-outlined">more_vert</span>
+        </a>
+      </div>
+      <div class="profile-img">
+        <a>
+          <img class="profile-img"src="img/unnamed.jpg" alt="">
+        </a>
+      </div>  
     </div>
   </header>
+
   <main>
     <section class="promotion">
       <div class="img">
@@ -109,17 +133,13 @@
       </div>
       <div class="events-container">
         <div class="event">
-          <header>
-            <img src="img/card-header-grid.png" alt="">
-          </header>
+          <img src="img/card-header-grid.png" alt="">
           <h1>Events</h1>
           <p>Bringing developers together in-person and online. Stay in the know about upcoming events, catch up on content you missed, and connect with Google experts.</p>
           <button>See events</button>
         </div>
         <div class="event">
-          <header>
-            <img src="img/card-header-grid.png" alt="">
-          </header>
+          <img src="img/card-header-grid.png" alt="">
           <h1>Community</h1>
           <p>Connect with fellow developers and startups in your area, hear from industry experts, share your skills, and learn new ones.</p>
           <button>Find Community</button>
@@ -203,7 +223,7 @@
         <div class="expert">
           <img src="img/avatars.png" alt="">
           <h1 class="expert-name">Eka Jayani Ayuningtyas</h1>
-          <p class="expert-location">Yogyakarta City, Special Region of Yogyakarta Indonesia</p>
+          <p class="expert-location">Yogyakarta City</p>
           <p>Expertise:<br><span class="expertise">Web Technologies</span></p>
           <button class="more">View Profile</button>
         </div>
@@ -256,7 +276,7 @@
     </div>
     <hr>
     <div class="bottom-nav">
-      <div class="logo"><img src="img/lockup.svg" alt=""></div>
+      <div class="logo"><a href="#"><img src="img/lockup.svg" alt=""></a></div>
       <nav>
         <ul>
           <li><a href="#">Android</a></li>
