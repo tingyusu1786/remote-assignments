@@ -1,3 +1,11 @@
+:root {
+  --google-light-gray: #f0f3f4;
+  --google-dark-gray: #5f6368;
+  --google-border-gray: #e0e3e6;
+  --google-blue: #1a73E8;
+  --google-green: #1f8e3d;
+}
+
 /* style reset */
 
 * {
@@ -36,7 +44,7 @@ img {
 
 button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #fff;
   border-radius: 5px;
   height: 2.5rem;
   padding: 0.5rem 2rem;
@@ -54,13 +62,13 @@ header {
   width: 100vw;
   height: 4.5rem;
   background-color: #fff;
-  box-shadow: 0 2px 5px #5f6367;
+  box-shadow: 0 2px 5px var(--google-dark-gray);
   padding: 1rem;
 }
 
 header li {
   font-family: 'Kumbh Sans', sans-serif;
-  color: #5f6367;
+  color: var(--google-dark-gray);
 }
 
 .header-left {
@@ -109,7 +117,7 @@ header li {
 
 .search button {
   border: none;
-  background-color: gainsboro;
+  background-color: var(--google-light-gray);
 }
 
 .search-icon {
@@ -122,7 +130,7 @@ header li {
 }
 
 .language button {
-  border: 1px solid gainsboro;
+  border: 1px solid var(--google-border-gray);
 }
 
 .profile-icon {
@@ -133,7 +141,7 @@ header li {
   text-align: center;
   vertical-align: middle;
   border-radius: 50%;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--google-border-gray);
 }
 
 .profile-img {
@@ -153,7 +161,7 @@ section {
 
 .promotion {
   width: 100%;
-  background-color: #1f8e3d;
+  background-color: var(--google-green);
   display: grid;
   grid-template-columns: 1fr minmax(10px, 30rem) minmax(10px, 30rem) 1fr;
   grid-template-rows: 1fr 1fr;
@@ -184,7 +192,7 @@ section {
 
 .promotion button {
   margin-top: 1rem;
-  color: white;
+  color: #fff;
 }
 
 .products {
@@ -205,14 +213,14 @@ section {
 }
 
 .products button {
-  color: white;
-  background-color: #1b72e8;
+  color: #fff;
+  background-color: var(--google-blue);
   margin-top: 3rem;
   border: none;
 }
 
 .products button:hover {
-  box-shadow: 0 2px 5px #888;
+  box-shadow: 0 2px 5px var(--google-dark-gray);
 }
 
 .events {
@@ -221,8 +229,8 @@ section {
 }
 
 .events-header {
-  color: white;
-  background-color: #1b72e8;
+  color: #fff;
+  background-color: var(--google-blue);
   padding: 2rem 0;
   width: 100vw;
   margin-left: -2rem;
@@ -230,7 +238,7 @@ section {
 
 .events-header button {
   background-color: #fff;
-  color: #1b72e8;
+  color: var(--google-blue);
   border: none;
 }
 
@@ -248,7 +256,7 @@ section {
 }
 
 .event {
-  border: 1px solid gainsboro;
+  border: 1px solid var(--google-border-gray);
   border-radius: 10px;
   display: inline-block;
   padding: 1rem;
@@ -260,17 +268,17 @@ section {
 }
 
 .event h1 {
-  color: #1b72e8;
+  color: var(--google-blue);
 }
 
 .event button {
   background-color: #fff;
-  color: #1b72e8;
-  border: 1px solid gainsboro;
+  color: var(--google-blue);
+  border: 1px solid var(--google-border-gray);
 }
 
 .event button:hover {
-  background-color: #1b72e822;
+  background-color: rgba(var(--google-blue), 0.14);
 }
 
 .news-feed {
@@ -290,7 +298,7 @@ section {
 }
 
 .news {
-  border: 1px solid gainsboro;
+  border: 1px solid var(--google-border-gray);
   border-radius: 10px;
   background-color: #fff;
   padding: 1rem;
@@ -306,19 +314,19 @@ section {
 
 .news h1 {
   font-size: 1.5rem;
-  color: #1b72e8;
+  color: var(--google-blue);
   grid-row: 2 / 3;
 }
 
 .news button {
   background-color: #fff;
-  color: #1b72e8;
+  color: var(--google-blue);
   width: 5rem;
   padding: 0;
 }
 
 .news button:hover {
-  background-color: #1b72e822;
+  background-color: rgba(var(--google-blue), 0.14);
 }
 
 .experts {
@@ -327,12 +335,12 @@ section {
 
 .experts button {
   background-color: #fff;
-  color: #1b72e8;
+  color: var(--google-blue);
   margin-bottom: 2rem;
 }
 
 .experts button:hover {
-  background-color: #1b72e822;
+  background-color: rgba(var(--google-blue), 0.14);
 }
 
 .experts-container {
@@ -344,7 +352,7 @@ section {
 }
 
 .expert {
-  border: 1px solid gainsboro;
+  border: 1px solid var(--google-border-gray);
   border-radius: 10px;
   background-color: #fff;
   padding: 2rem 2rem 0;
@@ -364,11 +372,11 @@ section {
 }
 
 .expertise {
-  color: #999;
+  color: #808080;
 }
 
 footer {
-  border-top: 1px solid gainsboro;
+  border-top: 1px solid var(--google-border-gray);
   margin-top: 2rem;
   font-size: smaller;
   line-height: 2;
@@ -380,7 +388,7 @@ footer h1 {
 }
 
 footer a:hover {
-  color: #1b72e8;
+  color: var(--google-blue);
 }
 
 .link-groups-container {
@@ -390,14 +398,13 @@ footer a:hover {
 }
 
 hr {
-  border-top: 1px solid gainsboro;
+  border-top: 1px solid var(--google-border-gray);
   margin: 1rem;
 }
 
 .bottom-nav {
   padding-left: 2rem;
   vertical-align: middle;
-  /* border: 1px solid #000; */
   display: flex;
   align-items: center;
 }
@@ -417,14 +424,14 @@ hr {
 }
 
 .subscribe button {
-  color: white;
-  background-color: #1b72e8;
+  color: #fff;
+  background-color: var(--google-blue);
   border: none;
   margin-bottom: 2rem;
 }
 
 .subscribe button:hover {
-  box-shadow: 0 2px 5px #888;
+  box-shadow: 0 2px 5px var(--google-dark-gray);
 }
 
 .bottom-left {
