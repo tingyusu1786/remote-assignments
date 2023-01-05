@@ -3,6 +3,7 @@
   --google-dark-gray: #5f6368;
   --google-border-gray: #e0e3e6;
   --google-blue: #1a73E8;
+  --google-blue-hover: #1a73e822;
   --google-green: #1f8e3d;
 }
 
@@ -54,7 +55,7 @@ button:hover, a {
   cursor: pointer;
 }
 
-/* page style */
+/* header */
 
 header {
   position: fixed;
@@ -165,9 +166,9 @@ section {
   display: grid;
   grid-template-columns: 1fr minmax(10px, 30rem) minmax(10px, 30rem) 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 2rem;
   align-items: center;
   color: #fff;
-  gap: 2rem;
 }
 
 .promotion img {
@@ -193,6 +194,10 @@ section {
 .promotion button {
   margin-top: 1rem;
   color: #fff;
+}
+
+.promotion button:hover {
+  background-color: #0002;
 }
 
 .products {
@@ -225,7 +230,6 @@ section {
 
 .events {
   text-align: center;
-  /* padding-left: 0; */
 }
 
 .events-header {
@@ -275,10 +279,11 @@ section {
   background-color: #fff;
   color: var(--google-blue);
   border: 1px solid var(--google-border-gray);
+  margin-top: 1rem;
 }
 
 .event button:hover {
-  background-color: rgba(var(--google-blue), 0.14);
+  background-color: var(--google-blue-hover);
 }
 
 .news-feed {
@@ -326,7 +331,7 @@ section {
 }
 
 .news button:hover {
-  background-color: rgba(var(--google-blue), 0.14);
+  background-color: var(--google-blue-hover);
 }
 
 .experts {
@@ -340,7 +345,7 @@ section {
 }
 
 .experts button:hover {
-  background-color: rgba(var(--google-blue), 0.14);
+  background-color: var(--google-blue-hover);
 }
 
 .experts-container {
