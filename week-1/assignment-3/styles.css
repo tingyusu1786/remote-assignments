@@ -7,7 +7,9 @@
   --google-green: #1f8e3d;
 }
 
-/* style reset */
+/* -------------------  
+      style reset
+------------------- */
 
 * {
   margin: 0;
@@ -55,16 +57,21 @@ button:hover, a {
   cursor: pointer;
 }
 
-/* header */
+/* -------------------  
+        header
+------------------- */
 
-header {
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: stretch;
   position: fixed;
-  margin-top: -4.5rem;
+  top: 0;
+  height: 3rem;
   width: 100vw;
-  height: 4.5rem;
   background-color: #fff;
   box-shadow: 0 2px 5px var(--google-dark-gray);
-  padding: 1rem;
 }
 
 header li {
@@ -73,43 +80,48 @@ header li {
 }
 
 .header-left {
-  display: inline-block;
-}
-
-.header-left * {
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  padding-left: 1rem;
 }
 
 .items-bar {
   display: none;
 }
 
-.logo {
-  display: inline-block;
-  width: 200px;
-}
-
-.header-nav {
-  display: inline-block;
-  margin-left: 1rem;
-}
-
-.header-nav li {
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-.header-right * {
-  display: inline-block;
-}
-
-.header-right {
-  float: right;
-}
-
 .nav-m {
   display: none;
 }
+
+.logo {
+  width: 13rem;
+  align-self: flex-end;
+}
+
+.header-nav {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
 
 .search span {
   font-size: 1rem;
@@ -117,6 +129,9 @@ header li {
 }
 
 .search button {
+  text-align: left;
+  padding-left: 1rem;
+  width: 10rem;
   border: none;
   background-color: var(--google-light-gray);
 }
@@ -140,20 +155,19 @@ header li {
   width: 2rem;
   height: 2rem;
   text-align: center;
-  vertical-align: middle;
   border-radius: 50%;
   border: 1px solid var(--google-border-gray);
 }
 
 .profile-img {
   border-radius: 50%;
-  vertical-align: middle;
+  height: 2rem;
 }
 
 /* main */
 
 main {
-  margin-top: 4.5rem;
+  margin-top: 3rem;
 }
 
 section {
