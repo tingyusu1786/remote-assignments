@@ -1,6 +1,12 @@
 function calculate(data) {
 // your code here
+  let totalPrice = 0;
+  for (i in data.products) {
+    totalPrice += data.products[i].price;
+  }
+  return totalPrice * data.discount
 }
+
 const discountedPrice = calculate({
 discount: 0.1,
 products: [
