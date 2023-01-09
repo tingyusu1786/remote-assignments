@@ -1,4 +1,5 @@
-function twoSum(nums, target) {
+// algorithm 1
+function twoSum1(nums, target) {
   for (let i = 0; i < nums.length -1; i++) {
     for (let j = 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
@@ -8,7 +9,18 @@ function twoSum(nums, target) {
   }
 }
 
-console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum1([2, 7, 11, 15], 9)); //output [ 0, 1 ]
+
+// algorithm 2
+function twoSum2(nums, target) {
+  for (i in nums) {
+    if (nums.includes(target - nums[i])) {
+      return [+i, nums.indexOf(target - nums[i])]
+    }
+  }  
+}
+
+console.log(twoSum2([2, 7, 11, 15], 9)); //output[0, 1]
 
 /*
   For example:
