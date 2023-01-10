@@ -1,8 +1,8 @@
 function calculate(data) {
 // your code here
   let totalPrice = 0;
-  for (i in data.products) {
-    totalPrice += data.products[i].price;
+  for (let i of data.products) {
+    totalPrice += i.price;
   }
   return totalPrice * data.discount;
 }
