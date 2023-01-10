@@ -1,10 +1,10 @@
 function calculate(args) {
   if (args.op === "+") {
-    return (args.n1 + args.n2)
+    return (args.n1 + args.n2);
   } else if (args.op === "-") {
-    return (args.n1 - args.n2)
+    return (args.n1 - args.n2);
   } else {
-    return "Not supported"
+    return "Not supported";
   }
 }
 console.log(calculate({ n1: 2, n2: 3, op: '+' })); // expected output: 5

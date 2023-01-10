@@ -4,7 +4,7 @@ function calculate(data) {
   for (i in data.products) {
     totalPrice += data.products[i].price;
   }
-  return totalPrice * data.discount
+  return totalPrice * data.discount;
 }
 
 const discountedPrice = calculate({
