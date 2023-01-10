@@ -1,6 +1,6 @@
 function max(numbers) {
   let maxNum = numbers[0];
-  for (var i = 1; i < numbers.length; i++) {
+  for (let i = 1; i < numbers.length; i++) {
     if (numbers[i] > maxNum) {
       maxNum = numbers[i];
     }
