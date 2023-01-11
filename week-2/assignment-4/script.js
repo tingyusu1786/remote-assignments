@@ -1,5 +1,3 @@
-// alert("test");
-
 /*
 --------------
 Request 1: Click to Change Text
@@ -18,9 +16,9 @@ Request 2: Click to Show/Close Menu
 --------------
 */
 
-const navMore = document.getElementById('nav-more');
-const sideMenu = document.getElementById('side-menu');
-const closeMenu = document.getElementById('close-side');
+const navMore = document.querySelector('.nav-icon');
+const sideMenu = document.querySelector('.side-menu');
+const closeMenu = document.querySelector('#close-side');
 
 navMore.addEventListener('click', () => { sideMenu.style.right = '0';
 })

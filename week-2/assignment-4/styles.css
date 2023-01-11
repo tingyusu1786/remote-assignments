@@ -60,7 +60,7 @@ nav ul {
 
 /* shows when click .nav-icon & hide when click .close-icon*/
 
-#side-menu {
+.side-menu {
   height: 100vh;
   width: 50vw;
   background-color: #fff;
@@ -71,7 +71,7 @@ nav ul {
   box-shadow: -1px 0 5px #0008;
 }
 
-#side-menu li {
+.side-menu li {
   margin: 1rem 0;
 }
 
