@@ -18,7 +18,16 @@ Request 2: Click to Show/Close Menu
 --------------
 */
 
+const navMore = document.getElementById('nav-more');
+const sideMenu = document.getElementById('side-menu');
+const closeMenu = document.getElementById('close-side');
 
+navMore.addEventListener('click', () => { sideMenu.style.right = '0';
+})
+
+closeMenu.addEventListener('click', () => {
+  sideMenu.style.right = 'calc(-50vw - 5px)';
+})
 
 /*
 --------------
