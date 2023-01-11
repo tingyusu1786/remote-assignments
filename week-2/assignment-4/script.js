@@ -1,7 +1,7 @@
-const message = document.querySelector("h1");
-
-message.addEventListener("click", (event) => {
-  message.innerHTML("Have a good time!");
-})
-
 alert("test");
+
+const message = document.querySelector(".welcome-msg");
+
+message.addEventListener("click", () => {
+  message.innerHTML = "Have a good time!";
+})
