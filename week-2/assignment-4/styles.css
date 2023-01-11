@@ -5,7 +5,11 @@
 @font-face {font-family: "AscenderSerifW01-Regular"; src: url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.eot"); src: url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.woff") format("woff"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/98c787ebd2fbc89cff250e889c8f59cc.svg#AscenderSerifW01-Regular") format("svg"); }
 @font-face {font-family: "AscenderSerifW01-Bold"; src: url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.eot"); src: url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.woff") format("woff"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/87cf7b4a5bf7b698fa9bcb9f73e32774.svg#AscenderSerifW01-Bold") format("svg"); }
 
-/*reset style*/
+/*
+---------------
+reset style
+---------------
+*/
 * {
   margin: 0;
   box-sizing: border-box;
@@ -24,6 +28,17 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* 
+---------------
+main
+---------------
+*/
+
 header {
   background-color: #eee;
   display: flex;
@@ -35,14 +50,35 @@ header {
 
 nav ul {
   display: flex;
-  list-style: none;
-  padding-left: 0;
   gap: 3rem;
 }
 
 /* only shows when screen size < 800px */
 .nav-icon {
   display: none;
+}
+
+/* shows when click .nav-icon & hide when click .close-icon*/
+
+#side-menu {
+  height: 100vh;
+  width: 50vw;
+  background-color: #fff;
+  position: fixed;
+  right: calc(-50vw - 5px);
+  top: 0;
+  padding: 0 0.5rem;
+  box-shadow: -1px 0 5px #0008;
+}
+
+#side-menu li {
+  margin: 1rem 0;
+}
+
+#close-side {
+  float: right;
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }
 
 .welcome {
@@ -96,12 +132,12 @@ nav ul {
   color: inherit;
 }
 
-.button:hover, .welcome:hover {
+.button:hover, .welcome:hover, #close-side:hover {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 799px) {
-  .nav-item {
+  header .nav-item {
     display: none;
   }
   .nav-icon {
