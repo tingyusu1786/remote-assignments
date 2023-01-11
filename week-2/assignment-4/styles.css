@@ -40,11 +40,6 @@ nav ul {
   gap: 3rem;
 }
 
-/* .nav-item {
-  margin: 1rem 1.5rem;
-  flex-grow: 1;
-} */
-
 /* only shows when screen size < 800px */
 .nav-icon {
   display: none;
@@ -88,6 +83,10 @@ nav ul {
   height: 200px;
 }
 
+.box-more {
+  display: none;
+}
+
 .button {
   background-color: #def;
   border: none;
@@ -97,7 +96,7 @@ nav ul {
   color: inherit;
 }
 
-.button:hover {
+.button:hover, .welcome:hover {
   cursor: pointer;
 }
 
