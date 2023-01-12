@@ -4,10 +4,11 @@ Request 1: Click to Change Text
 --------------
 */
 
-const message = document.querySelector(".welcome");
+const welcomeSection = document.querySelector(".welcome");
+const welcomeMessage = document.querySelector(".welcome-msg")
 
-message.addEventListener("click", () => {
-  message.innerHTML = "<h1 class='welcome-msg'>Have a good time!</h1>";
+welcomeSection.addEventListener("click", () => {
+  welcomeMessage.textContent = "Have a good time!";
 })
 
 /*
