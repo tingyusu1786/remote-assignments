@@ -1,7 +1,7 @@
 // algorithm 1
 function twoSum1(nums, target) {
   for (let i = 0; i < nums.length -1; i++) {
-    for (let j = 1; j < nums.length; j++) {
+    for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
         return [i, j];
       }
