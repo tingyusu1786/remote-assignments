@@ -1,9 +1,18 @@
+// // using for loop
+// function calculate(data) {
+//   let totalPrice = 0;
+//   for (let i of data.products) {
+//     totalPrice += i.price;
+//   }
+//   return totalPrice * (1-data.discount);
+// }
+
+// using forEach
 function calculate(data) {
-// your code here
   let totalPrice = 0;
-  for (let i of data.products) {
+  data.products.forEach( i => {
     totalPrice += i.price;
-  }
+  })
   return totalPrice * (1-data.discount);
 }
 
