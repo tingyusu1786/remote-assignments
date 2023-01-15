@@ -7,12 +7,22 @@
 //   return totalPrice * (1-data.discount);
 // }
 
-// using forEach
+
+// // using forEach()
+// function calculate(data) {
+//   let totalPrice = 0;
+//   data.products.forEach( i => {
+//     totalPrice += i.price;
+//   })
+//   return totalPrice * (1-data.discount);
+// }
+
+
+// using reduce()
+// 先用.map()把各product的price抓出來，再用.reduce()加總
 function calculate(data) {
-  let totalPrice = 0;
-  data.products.forEach( i => {
-    totalPrice += i.price;
-  })
+  let totalPrice = data.products.map(i => i.price)
+                                .reduce((a, b) => a + b);
   return totalPrice * (1-data.discount);
 }
 
@@ -33,4 +43,5 @@ const discountedPrice = calculate({
     }
   ]
 });
+
 console.log(discountedPrice) // show the total price of all products after applying a discount
