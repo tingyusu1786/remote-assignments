@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sum</title>
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <p>Enter a <span>positive integer</span></p>
+  <input type="text" name="number" min="1" class="num-input" required>
+  <input type="submit" id="submit">
+  <p class="result"></p>
+
+  <script>
+    let span = document.querySelector('span');
+    let numInput = document.querySelector(".num-input");
+    let submit = document.querySelector("#submit");
+    let resultPara = document.querySelector(".result");
+
+    numInput.focus();
+
+    submit.addEventListener('click', () => {
+      let number = numInput.value;
+      if (!(number > 0)) {
+        span.style.color = 'red';
+      } else {
+        showResult(number);
+      }
+    });
+
+    function showResult(number) {
+      let requestURL = `http://localhost:3000/getData?number=${number}`;
+      fetch(requestURL)
+        .then( response => response.text())
+        .then( text => resultPara.innerHTML = `The result is: <strong>${text}</strong>`)
+        .catch( error => resultPara.innerHTML = `Error message: ${error}`);
+    }
+  </script>  
+</body>
+</html>
+
+
+
+
+
+
