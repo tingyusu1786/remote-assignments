@@ -23,6 +23,10 @@
     let resultPara = document.querySelector(".result");
 
     numInput.focus();
+    numInput.addEventListener('input', () => {
+      resultPara.innerHTML = '';
+      span.style.color = 'inherit';
+    });
 
     submit.addEventListener('click', () => {
       let number = numInput.value;
@@ -43,9 +47,3 @@
   </script>  
 </body>
 </html>
-
-
-
-
-
-

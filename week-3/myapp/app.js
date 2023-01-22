@@ -43,7 +43,14 @@ app.get("/getData", (req, res) => {
 // -------------------------
 
 app.use(express.static("sum"));
+ 
+// app.post("/sum", (req,res) => {
+//   
+// })
 
+// app.get('/sum', (req, res) => {
+//   res.send(posts);
+// });
 
 module.exports = router;
 
