@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>assignment-2</title>
+  <style>
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      background-color: #DCF7C3;
+      flex-basis: 200px;
+      padding: 0 1rem 1rem;
+      border-radius: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <h1></h1>
+    <section>
+    </section>  
+  
+  </div>
+
+  <script>
+    
+
+    let title = document.querySelector('h1');
+    let section = document.querySelector('section');
+
+    function ajax(url) {
+      return fetch(url)
+        .then( res => {
+          if(!res.ok) {
+            throw new Error(res.status);
+          } else {
+            return res.json();
+          }
+        })
+        .then( data => {
+          return data;
+        })
+        .catch( err => {
+          title.textContent = `Sorry, something went wrong (${err})`;
+        });
+    }
+
+    function render(data) {
+      if (data) {title.textContent = "Our Products✨";}
+
+      data.forEach( product => {
+
+        let article = document.createElement('article');
+        let productName = document.createElement('h3');
+        let productPrice = document.createElement('p');
+        let productDescription = document.createElement('details');
+
+        productName.textContent = product.name;
+        productPrice.textContent = `$ ${product.price}`;
+        productDescription.textContent = product.description;
+
+        let articleContents = [productName, productPrice, productDescription];
+        articleContents.forEach( content => article.append(content) );
+
+        section.append(article);
+
+      });
+    }
+
+    const url = "https://appworks-school.github.io/Remote-Assignment-Data/products";
+
+    ajax(url).then((data) => {
+      render(data);
+    });
+
+  </script>
+</body>
+</html>
