@@ -28,10 +28,7 @@
 
 // using reduce() (without .map())
 function calculate(data) {
-  let totalPrice = data.products.reduce((totalPrice, product) => {
-    totalPrice += product.price;
-    return totalPrice;
-  }, 0);
+  let totalPrice = data.products.reduce((totalPrice, product) => totalPrice + product.price, 0);
   return totalPrice * (1-data.discount);
 }
 
