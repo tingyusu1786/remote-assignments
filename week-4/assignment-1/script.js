@@ -1,6 +1,6 @@
 function delayedResult(n1, n2, delayTime, callback) {
 // your code here
-  let result = n1 + n2;
+  const result = n1 + n2;
   window.setTimeout(() => callback(result), delayTime);
 }
 
