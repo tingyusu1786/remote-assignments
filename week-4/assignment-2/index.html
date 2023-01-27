@@ -47,8 +47,8 @@
   <script>
     
 
-    let title = document.querySelector('h1');
-    let section = document.querySelector('section');
+    const title = document.querySelector('h1');
+    const section = document.querySelector('section');
 
     function ajax(url) {
       return fetch(url)
@@ -72,16 +72,16 @@
 
       data.forEach( product => {
 
-        let article = document.createElement('article');
-        let productName = document.createElement('h3');
-        let productPrice = document.createElement('p');
-        let productDescription = document.createElement('details');
+        const article = document.createElement('article');
+        const productName = document.createElement('h3');
+        const productPrice = document.createElement('p');
+        const productDescription = document.createElement('details');
 
         productName.textContent = product.name;
         productPrice.textContent = `$ ${product.price}`;
         productDescription.textContent = product.description;
 
-        let articleContents = [productName, productPrice, productDescription];
+        const articleContents = [productName, productPrice, productDescription];
         articleContents.forEach( content => article.append(content) );
 
         section.append(article);
