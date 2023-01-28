@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 
 class MainContent extends React.Component {
 
   state = {
-    style: {display: 'none'}
+    style: {display: 'none'},
+    showed: false
   }
 
-  showMore = () => {
-    this.setState({
-      style: {display: 'grid'}
+  toggleMore = () => {
+    this.setState(prevState => {
+      if (prevState.showed) {
+        return {
+          style: {display: 'none'},
+          showed: false
+        }
+      } else {
+        return {
+          style: {display: 'grid'},
+          showed: true
+        }
+      }
     });
   }
-
-  // use Hook to toggle
 
   render() {
     return (
@@ -27,7 +36,7 @@ class MainContent extends React.Component {
             <div className="content-box">Content Box 4</div>
           </div>
 
-          <button className="button" id="btn-more" name="button" onClick={ this.showMore }>
+          <button className="button" id="btn-more" name="button" onClick={ this.toggleMore }>
             Call to Action
           </button>
 
