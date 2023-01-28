@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-function WelcomeMsg(props) {
-  const msg = "Welcome Message";
-  const clicked ="Have a good day!";
-  let text = msg;
-  return (
-    <section className="welcome" onClick={() => {alert(text)}}>
-      <h1 className="welcome-msg">{text}</h1>
-    </section>
-  );
+class WelcomeMsg extends React.Component {
+
+  state = {
+    msg: "Welcome message",
+  }
+
+  changeMsg = () => {
+    this.setState({
+      msg: "Have a good time!"
+    });
+  }
+
+  render() {
+    return (
+      <section className="welcome" onClick={ this.changeMsg }>
+        <h1 className="welcome-msg">{ this.state.msg }</h1>
+      </section>
+    );
+  }
 }
 
 export default WelcomeMsg;
