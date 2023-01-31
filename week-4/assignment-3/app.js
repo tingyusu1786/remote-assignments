@@ -1,33 +1,15 @@
 // replace "class" with "function" for better practice
-import React, { useState } from 'react';
 
 function Header(props) {
 
-  const [state, setState] = useState({position: {right: 'calc(-50vw - 5px)'}})
+  const [state, setState] = React.useState({right: 'calc(-50vw - 5px)'});
 
-  openSide = () => {
-    this.setState({position: {right: '0'}})
+  const openSide = () => {
+    setState({right: '0'});
   }
 
-  closeSide = () => {
-    this.setState({position: {right: 'calc(-50vw - 5px)'}})
-  }
-
-  itemList = (num) => {
-    let numArr = Array.from(
-      {length: num},
-      (value, index) => index +1);
-    return (
-      <ul>
-        {numArr.map(i =>
-          <li className="nav-item">
-            <a href="#">
-              Item {i}
-            </a>
-          </li>
-        )}
-      </ul>
-      )
+  const closeSide = () => {
+    setState({right: 'calc(-50vw - 5px)'});
   }
 
   return (
@@ -37,9 +19,30 @@ function Header(props) {
           <a href="#">Website Title / Logo</a>
         </div>
         <nav className="nav-items">
-          {this.itemList(this.props.itemNum)}
           <ul>
-            <li className="nav-icon" onClick={this.openSide}>
+            <li className="nav-item">
+              <a href="#">
+                Item 1
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#">
+                Item 2
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#">
+                Item 3
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#">
+                Item 4
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li className="nav-icon" onClick={ openSide }>
               <a href="#">
                 <span className="material-symbols-outlined">menu</span>
               </a>
@@ -48,101 +51,98 @@ function Header(props) {
         </nav>
       </header>
 
-      <div className="side-menu" style={this.state.position}>
-        <div id="close-side" onClick={this.closeSide}>X</div>
-        {this.itemList(this.props.itemNum)}
+      <div className="side-menu" style={ state }>
+        <div id="close-side" onClick={ closeSide }>X</div>
+        <ul>
+          <li className="nav-item">
+            <a href="#">
+              Item 1
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#">
+              Item 2
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#">
+              Item 3
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#">
+              Item 4
+            </a>
+          </li>
+        </ul>
       </div>
     </>
   );
 }
 
-class MainContent extends React.Component {
+function MainContent() {
 
-  state = {
-    style: {display: 'none'},
-    showed: false
+  const [style, setStyle] = React.useState({display: 'none'});
+
+  const toggleMore = () => {
+    setStyle({display: 'grid'});
   }
 
-  toggleMore = () => {
-    this.setState(prevState => {
-      if (prevState.showed) {
-        return {
-          style: {display: 'none'},
-          showed: false
-        }
-      } else {
-        return {
-          style: {display: 'grid'},
-          showed: true
-        }
-      }
-    });
-  }
-
-  arrayRange = (start, stop) =>
+  const arrayRange = (start, stop) =>
     Array.from(
       { length: (stop - start + 1) },
       (value, index) => start + index
     );
 
-  contentBox = (numStart, numEnd) => {
-    let boxNum = this.arrayRange(numStart, numEnd);
+  const contentBox = (numStart, numEnd) => {
+    let boxNum = arrayRange(numStart, numEnd);
     return boxNum.map(i =>
       <div className="content-box">
         Content Box {i}
       </div>
     );
   }
+  
+  return (
+    <main>
+      <section className="content">
 
-  render() {
-    return (
-      <main>
-        <section className="content">
+        <h2 >Section Title</h2>
+        <div className="content-boxes">
+          { contentBox(1, 4) }
+        </div>
 
-          <h2 >Section Title</h2>
-          <div className="content-boxes">
-            {this.contentBox(1, 4)}
-          </div>
+        <button className="button" id="btn-more" name="button" onClick={ toggleMore }>
+          Call to Action
+        </button>
 
-          <button className="button" id="btn-more" name="button" onClick={ this.toggleMore }>
-            Call to Action
-          </button>
+        <div className="content-boxes" style={ style } >
+          { contentBox(5, 8) }
+        </div>
 
-          <div className="content-boxes" style={this.state.style} >
-            {this.contentBox(5, 8)}
-          </div>
-
-        </section>
-      </main>
-    );
-  }
-}
-
-class WelcomeMsg extends React.Component {
-
-  state = {
-    msg: "Welcome message",
-  }
-
-  changeMsg = () => {
-    this.setState({
-      msg: "Have a good time!"
-    });
-  }
-
-  render() {
-    return (
-      <section className="welcome" onClick={ this.changeMsg }>
-        <h1 className="welcome-msg">{ this.state.msg }</h1>
       </section>
-    );
-  }
+    </main>
+  );
 }
 
-function App(prop) {
+
+function WelcomeMsg() {
+
+  const [msg, setMsg] = React.useState("Welcome message");
+
+  const changeMsg = () => setMsg("Have a good time!");
+  
+  return (
+    <section className="welcome" onClick={ changeMsg }>
+      <h1 className="welcome-msg">{ msg }</h1>
+    </section>
+  );
+}
+
+function App() {
   return (
     <>
-      <Header itemNum={4} />
+      <Header />
       <WelcomeMsg />
       <MainContent />
     </>
