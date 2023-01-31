@@ -1,153 +1,145 @@
 class Header extends React.Component {
 
-      state = {
-        position: {right: 'calc(-50vw - 5px)'},
+  state = {
+    position: {right: 'calc(-50vw - 5px)'},
+  }
+
+  openSide = () => {
+    this.setState({position: {right: '0'}})
+  }
+
+  closeSide = () => {
+    this.setState({position: {right: 'calc(-50vw - 5px)'}})
+  }
+
+  itemList = (num) => {
+    let numArr = Array.from(
+      {length: num},
+      (value, index) => index +1);
+    return (
+      <ul>
+        {numArr.map(i => (<li className="nav-item"><a href="#">Item {i}</a></li>))}
+      </ul>
+      )
+  }
+
+  render(props) {
+    return (
+      <>
+        <header>
+          <div className="logo">
+            <a href="#">Website Title / Logo</a>
+          </div>
+          <nav className="nav-items">
+            {this.itemList(this.props.itemNum)}
+            <ul>
+              <li className="nav-icon" onClick={this.openSide}>
+                <a href="#">
+                  <span className="material-symbols-outlined">menu</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div className="side-menu" style={this.state.position}>
+          <div id="close-side" onClick={this.closeSide}>X</div>
+          {this.itemList(this.props.itemNum)}
+        </div>
+      </>
+    );
+  }
+}
+
+class MainContent extends React.Component {
+
+  state = {
+    style: {display: 'none'},
+    showed: false
+  }
+
+  toggleMore = () => {
+    this.setState(prevState => {
+      if (prevState.showed) {
+        return {
+          style: {display: 'none'},
+          showed: false
+        }
+      } else {
+        return {
+          style: {display: 'grid'},
+          showed: true
+        }
       }
+    });
+  }
 
-      openSide = () => {
-        this.setState({position: {right: '0'}})
-      }
+  arrayRange = (start, stop) =>
+    Array.from(
+      { length: (stop - start + 1) },
+      (value, index) => start + index
+    );
 
-      closeSide = () => {
-        this.setState({position: {right: 'calc(-50vw - 5px)'}})
-      }
+  contentBox = (numStart, numEnd) => {
+    let boxNum = this.arrayRange(numStart, numEnd);
+    return boxNum.map(i => <div className="content-box">Content Box {i}</div>);
+  }
 
-      render() {
-        return (
-          <>
-            <header>
-              <div className="logo">
-                <a href="#">Website Title / Logo</a>
-              </div>
-              <nav className="nav-items">
-                <ul>
-                  <li className="nav-item">
-                    <a href="#">Item 1</a>
-                  </li>
-                  <li className="nav-item">
-                    <a href="#">Item 2</a>
-                  </li>
-                  <li className="nav-item">
-                    <a href="#">Item 3</a>
-                  </li>
-                  <li className="nav-item">
-                    <a href="#">Item 4</a>
-                  </li>
-                  <li className="nav-icon" onClick={this.openSide}>
-                    <a href="#">
-                      <span className="material-symbols-outlined">menu</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </header>
+  render() {
+    return (
+      <main>
+        <section className="content">
 
-            <div className="side-menu" style={this.state.position}>
-              <div id="close-side" onClick={this.closeSide}>X</div>
-              <ul>
-                <li className="nav-item">
-                  <a href="#">Item 1</a>
-                </li>
-                <li className="nav-item">
-                  <a href="#">Item 2</a>
-                </li>
-                <li className="nav-item">
-                  <a href="#">Item 3</a>
-                </li>
-                <li className="nav-item">
-                  <a href="#">Item 4</a>
-                </li>
-              </ul>
-            </div>
-          </>
-        );
-      }
-    }
+          <h2 >Section Title</h2>
+          <div className="content-boxes">
+            {this.contentBox(1, 4)}
+          </div>
 
-    class MainContent extends React.Component {
+          <button className="button" id="btn-more" name="button" onClick={ this.toggleMore }>
+            Call to Action
+          </button>
 
-      state = {
-        style: {display: 'none'},
-        showed: false
-      }
+          <div className="content-boxes" style={this.state.style} >
+            {this.contentBox(5, 8)}
+          </div>
 
-      toggleMore = () => {
-        this.setState(prevState => {
-          if (prevState.showed) {
-            return {
-              style: {display: 'none'},
-              showed: false
-            }
-          } else {
-            return {
-              style: {display: 'grid'},
-              showed: true
-            }
-          }
-        });
-      }
+        </section>
+      </main>
+    );
+  }
+}
 
-      render() {
-        return (
-          <main>
-            <section className="content">
+class WelcomeMsg extends React.Component {
 
-              <h2 >Section Title</h2>
-              <div className="content-boxes">
-                <div className="content-box">Content Box 1</div>
-                <div className="content-box">Content Box 2</div>
-                <div className="content-box">Content Box 3</div>
-                <div className="content-box">Content Box 4</div>
-              </div>
+  state = {
+    msg: "Welcome message",
+  }
 
-              <button className="button" id="btn-more" name="button" onClick={ this.toggleMore }>
-                Call to Action
-              </button>
+  changeMsg = () => {
+    this.setState({
+      msg: "Have a good time!"
+    });
+  }
 
-              <div className="content-boxes" style={this.state.style} >
-                <div className="content-box">Content Box 5</div>
-                <div className="content-box">Content Box 6</div>
-                <div className="content-box">Content Box 7</div>
-                <div className="content-box">Content Box 8</div>
-              </div>
+  render() {
+    return (
+      <section className="welcome" onClick={ this.changeMsg }>
+        <h1 className="welcome-msg">{ this.state.msg }</h1>
+      </section>
+    );
+  }
+}
 
-            </section>
-          </main>
-        );
-      }
-    }
+function App(prop) {
+  return (
+    <>
+      <Header itemNum={4} />
+      <WelcomeMsg />
+      <MainContent />
+    </>
+  );
+}
 
-    class WelcomeMsg extends React.Component {
-
-      state = {
-        msg: "Welcome message",
-      }
-
-      changeMsg = () => {
-        this.setState({
-          msg: "Have a good time!"
-        });
-      }
-
-      render() {
-        return (
-          <section className="welcome" onClick={ this.changeMsg }>
-            <h1 className="welcome-msg">{ this.state.msg }</h1>
-          </section>
-        );
-      }
-    }
-
-    function App(prop) {
-      return (
-        <>
-          <Header />
-          <WelcomeMsg />
-          <MainContent />
-        </>
-      );
-    }
-
-    const container = document.getElementById('root');
-    const root = ReactDOM.createRoot(container);
-    root.render(<App />);
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<App />);
