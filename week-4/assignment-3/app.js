@@ -18,7 +18,13 @@ class Header extends React.Component {
       (value, index) => index +1);
     return (
       <ul>
-        {numArr.map(i => (<li className="nav-item"><a href="#">Item {i}</a></li>))}
+        {numArr.map(i =>
+          <li className="nav-item">
+            <a href="#">
+              Item {i}
+            </a>
+          </li>
+        )}
       </ul>
       )
   }
@@ -82,7 +88,11 @@ class MainContent extends React.Component {
 
   contentBox = (numStart, numEnd) => {
     let boxNum = this.arrayRange(numStart, numEnd);
-    return boxNum.map(i => <div className="content-box">Content Box {i}</div>);
+    return boxNum.map(i =>
+      <div className="content-box">
+        Content Box {i}
+      </div>
+    );
   }
 
   render() {
