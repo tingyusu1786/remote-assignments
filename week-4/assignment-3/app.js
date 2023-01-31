@@ -1,3 +1,5 @@
+// replace "class" with "function" for better practice
+
 class Header extends React.Component {
 
   state = {
