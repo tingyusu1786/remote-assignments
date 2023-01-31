@@ -12,12 +12,12 @@ function App() {
   const RenderList = () => {
     return (
       repos.map(repo => (
-        <ul key={repo.name}>
+        <li key={repo.name} className="repo">
           <h3>{repo.name}</h3> 
-          <p>{repo.visibility}</p> 
-          <p>{repo.description}</p> 
-          <ul>{repo.topics.map(topic => <li key={topic}>{topic}</li>)}</ul>
-        </ul>
+          <p className="visibility">{repo.visibility}</p> 
+          <p className="desc">{repo.description}</p> 
+          <ul className="topics">{repo.topics.map(topic => <li key={topic} className="topic">{topic}</li>)}</ul>
+        </li>
       ))
     );
   }
@@ -27,10 +27,12 @@ function App() {
   }, [page]);
 
   return (
-    <div>
-      <RenderList />
+    <>
+      <ul className="list-block">
+        <RenderList />
+      </ul>
       <button onClick={() => setPage(curPage => curPage + 1)}>More</button>
-    </div>
+    </>
   );
 }
 
