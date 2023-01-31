@@ -1,10 +1,9 @@
 // replace "class" with "function" for better practice
+import React, { useState } from 'react';
 
-class Header extends React.Component {
+function Header(props) {
 
-  state = {
-    position: {right: 'calc(-50vw - 5px)'},
-  }
+  const [state, setState] = useState({position: {right: 'calc(-50vw - 5px)'}})
 
   openSide = () => {
     this.setState({position: {right: '0'}})
@@ -31,32 +30,30 @@ class Header extends React.Component {
       )
   }
 
-  render(props) {
-    return (
-      <>
-        <header>
-          <div className="logo">
-            <a href="#">Website Title / Logo</a>
-          </div>
-          <nav className="nav-items">
-            {this.itemList(this.props.itemNum)}
-            <ul>
-              <li className="nav-icon" onClick={this.openSide}>
-                <a href="#">
-                  <span className="material-symbols-outlined">menu</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
-        <div className="side-menu" style={this.state.position}>
-          <div id="close-side" onClick={this.closeSide}>X</div>
-          {this.itemList(this.props.itemNum)}
+  return (
+    <>
+      <header>
+        <div className="logo">
+          <a href="#">Website Title / Logo</a>
         </div>
-      </>
-    );
-  }
+        <nav className="nav-items">
+          {this.itemList(this.props.itemNum)}
+          <ul>
+            <li className="nav-icon" onClick={this.openSide}>
+              <a href="#">
+                <span className="material-symbols-outlined">menu</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div className="side-menu" style={this.state.position}>
+        <div id="close-side" onClick={this.closeSide}>X</div>
+        {this.itemList(this.props.itemNum)}
+      </div>
+    </>
+  );
 }
 
 class MainContent extends React.Component {
