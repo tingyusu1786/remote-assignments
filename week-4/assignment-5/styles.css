@@ -1,0 +1,34 @@
+#root {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+body, button {
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.all-addone, .counter button {
+  width: 8rem;
+}
+
+.all-addone, .counter:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.counter {
+  margin-bottom: 1rem;
+}
+
+.counter span {
+  margin-left: 2rem;
+}
+
+.add-counter {
+  width: 16rem;
+}
