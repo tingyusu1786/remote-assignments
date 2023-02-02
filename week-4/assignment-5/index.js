@@ -1,4 +1,4 @@
-let initValue = 0;
+const initValue = 0;
 
 const App = () => {
   const [counters, setCounters] = React.useState([
