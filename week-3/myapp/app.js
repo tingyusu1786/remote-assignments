@@ -57,7 +57,7 @@ app.use(express.static("myName"));
 
 app.get("/myName", (req,res) => {
   if (req.cookies.name === undefined) {
-    res.redirect(`/myName.html`);
+    res.redirect("/myName.html");
   } else {
     res.send(req.cookies.name);
   }
