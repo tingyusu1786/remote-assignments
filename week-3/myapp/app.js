@@ -33,7 +33,7 @@ app.get("/getData", (req, res) => {
   } else {
     let sum = num => {
       return num === 0 ? 0 : num + sum( num-1 );
-    };
+    };  
     res.send(`${sum(+number)}`); 
   }
 });

@@ -30,7 +30,7 @@
 
     submit.addEventListener('click', () => {
       let number = numInput.value;
-      if (!(number > 0)) {
+      if (!(number > 0) || !(Number.isInteger(+number))) {
         span.style.color = 'red';
       } else {
         showResult(number);
